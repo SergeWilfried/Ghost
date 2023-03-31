@@ -4,13 +4,13 @@
             {{#unless this.session.user.isEditor}}
                 <div class="gh-canvas-breadcrumb">
                     <LinkTo @route="settings" data-test-breadcrumb>
-                        Settings
+                        Réglages
                     </LinkTo>
-                    {{svg-jar "arrow-right-small"}} Staff
+                    {{svg-jar "arrow-right-small"}} Personel
                 </div>
             {{/unless}}
             <h2 class="gh-canvas-title" data-test-screen-title>
-                Staff
+                Personel
             </h2>
         </div>
 
@@ -22,7 +22,7 @@
                         <GhDropdownButton
                             @dropdownName="staff-actions-menu"
                             @classNames="gh-btn gh-btn-icon icon-only gh-btn-action-icon"
-                            @title="Staff Actions"
+                            @title="Personel Actions"
                             data-test-button="staff-actions"
                         >
                             <span>
@@ -37,13 +37,13 @@
                         >
                             <li>
                                 <button type="button" {{on "click" this.toggleResetAllPasswordsModal}}>
-                                    <span>Reset all passwords</span>
+                                    <span>Réinitialisez tous les mots de passe</span>
                                 </button>
                             </li>
                         </GhDropdown>
                     </span>
                 {{/if}}
-                <button class="gh-btn gh-btn-primary" data-test-button="invite-staff-user" type="button" {{on "click" this.toggleInviteUserModal}}><span>Invite people</span></button>
+                <button class="gh-btn gh-btn-primary" data-test-button="invite-staff-user" type="button" {{on "click" this.toggleInviteUserModal}}><span>Invitez des membres</span></button>
             </section>
         {{/unless}}
     </GhCanvasHeader>
@@ -79,11 +79,11 @@
                                         <p class="apps-card-app-desc">
                                             {{#if invite.pending}}
                                                 <span class="description-error">
-                                                    Invitation not sent - please try again
+                                                    L'invitation n'a pas été envoyée - veuillez réessayer
                                                 </span>
                                             {{else}}
                                                 <span class="description" data-test-invite-description>
-                                                    Invitation sent: {{component.createdAt}},
+                                                    Invitation envoyée: {{component.createdAt}},
                                                     {{if component.isExpired "expired" "expires"}} {{component.expiresAt}}
                                                 </span>
                                             {{/if}}
@@ -93,13 +93,13 @@
                                 <div class="apps-card-right">
                                     <div class="apps-configured">
                                         {{#if component.isSending}}
-                                            <span>Sending Invite...</span>
+                                            <span>Envoie de l'invitation en cours...</span>
                                         {{else}}
                                             <a class="apps-configured-action red-hover" href="#revoke" {{on "click" component.revoke}} data-test-revoke-button>
-                                                Revoke
+                                                Révoquer
                                             </a>
                                             <a class="apps-configured-action green-hover" href="#resend" {{on "click" component.resend}} data-test-resend-button>
-                                                Resend
+                                                Renvoyer
                                             </a>
 
                                             <span class="apps-configured-action gh-badge {{invite.role.lowerCaseName}}" data-test-role-name>{{invite.role.name}}</span>
@@ -117,7 +117,7 @@
     {{/unless}}
 
     <section class="gh-main-section gh-active-users {{unless this.invites "apps-first-header"}}" data-test-active-users>
-        <h4 class="gh-main-section-header small">Active users</h4>
+        <h4 class="gh-main-section-header small">Utilisateurs actifs</h4>
         <div class="apps-grid">
             {{!-- For authors/contributors, only show their own user --}}
             {{#if this.currentUser.isAuthorOrContributor}}
@@ -143,7 +143,7 @@
     {{!-- Don't show if we have no suspended users or logged in as an author --}}
     {{#if (and this.suspendedUsers (not this.currentUser.isAuthorOrContributor))}}
     <section class="apps-grid-container gh-active-users" data-test-suspended-users>
-        <span class="apps-grid-title">Suspended users</span>
+        <span class="apps-grid-title">Suspendue users</span>
         <div class="apps-grid">
             {{#each this.suspendedUsers key="id" as |user|}}
                 <GhUserActive @user={{user}} as |component|>

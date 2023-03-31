@@ -3,12 +3,12 @@
         <div class="flex flex-column">
             <div class="gh-canvas-breadcrumb">
                 <LinkTo @route="settings">
-                    Settings
+                    Réglages
                 </LinkTo>
-                {{svg-jar "arrow-right-small"}} Code injection
+                {{svg-jar "arrow-right-small"}} Injection de code
             </div>
             <h2 class="gh-canvas-title" data-test-screen-title>
-                Code injection
+                Injection de code
             </h2>
         </div>
         <section class="view-actions">
@@ -21,20 +21,20 @@
             <fieldset>
                 <p class="gh-box gh-box-tip">
                     {{svg-jar "idea"}}
-                    Ghost allows you to inject code into the top and bottom of your theme files without editing them. This allows for quick modifications to insert useful things like tracking codes and meta tags.
+                   Baangre vous permet d'injecter du code en haut et en bas des fichiers de votre thème sans les éditer. Cela permet des modifications rapides pour insérer des éléments utiles tels que des codes de suivi et des balises méta.
                 </p>
 
                 <div class="gh-main-section">
-                    <label for="ghost-head" class="gh-main-section-header bn">Site Header</label>
-                    <p class="gh-main-section-description bn">Code here will be injected into the <code>\{{ghost_head}}</code> tag on every page of the site</p>
+                    <label for="ghost-head" class="gh-main-section-header bn">En-tête du site</label>
+                    <p class="gh-main-section-description bn">Le code sera injecté dans <code>\{{ghost_head}}</code> sur chaque page du site</p>
                     <div class="form-group settings-code">
                         <GhCmEditor @value={{this.settings.codeinjectionHead}} @id="ghost-head" @class="gh-input settings-code-editor" @name="codeInjection[ghost_head]" @type="text" @update={{action (mut this.settings.codeinjectionHead)}} />
                     </div>
                 </div>
 
                 <div class="gh-main-section">
-                    <label for="ghost-foot" class="gh-main-section-header bn">Site Footer</label>
-                    <p class="gh-main-section-description bn">Code here will be injected into the <code>\{{ghost_foot}}</code> tag on every page of the site</p>
+                    <label for="ghost-foot" class="gh-main-section-header bn">Pied de Page</label>
+                    <p class="gh-main-section-description bn">Le code sera injecté dans <code>\{{ghost_foot}}</code> sur chaque page du site</p>
                     <div class="form-group settings-code">
                         <GhCmEditor @value={{this.settings.codeinjectionFoot}} @id="ghost-foot" @class="gh-input settings-code-editor" @name="codeInjection[ghost_foot]" @type="text" @update={{action (mut this.settings.codeinjectionFoot)}} />
                     </div>

@@ -61,7 +61,7 @@
 
             {{!--
                 gh-koenig-editor acts as a wrapper around the title input and
-                koenig editor canvas to support Ghost-specific editor behaviour
+                koenig editor canvas to support Baangre-specific editor behaviour
             --}}
             <GhKoenigEditorLexical
                 @title={{readonly this.post.titleScratch}}
@@ -114,7 +114,7 @@
         {{/if}}
     </div>
 
-    <button type="button" class="settings-menu-toggle gh-btn gh-btn-editor gh-btn-icon icon-only gh-btn-action-icon" title="Settings" {{on "click" this.toggleSettingsMenu}} data-test-psm-trigger>
+    <button type="button" class="settings-menu-toggle gh-btn gh-btn-editor gh-btn-icon icon-only gh-btn-action-icon" title="Réglages" {{on "click" this.toggleSettingsMenu}} data-test-psm-trigger>
         {{#if this.showSettingsMenu}}
             <span class="settings-menu-open">{{svg-jar "sidemenu-open"}}</span>
         {{else}}

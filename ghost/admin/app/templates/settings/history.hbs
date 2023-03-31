@@ -4,13 +4,13 @@
             {{#if this.userRecord}}
                 <div class="gh-canvas-breadcrumb">
                     <LinkTo @route="settings">
-                        Settings
+                        Réglages
                     </LinkTo>
                         {{svg-jar "arrow-right-small"}}
                         <LinkTo @route="settings.history" @query={{reset-query-params "settings.history"}} data-test-link="history-back">
-                            History
+                            Historique
                         </LinkTo>
-                        {{svg-jar "arrow-right-small"}} User
+                        {{svg-jar "arrow-right-small"}} Utilisateur
                 </div>
                 <h2 class="gh-canvas-title" data-test-screen-title>
                     {{or this.userRecord.name this.userRecord.email}}
@@ -18,12 +18,12 @@
             {{else}}
                 <div class="gh-canvas-breadcrumb">
                     <LinkTo @route="settings">
-                        Settings
+                        Réglages
                     </LinkTo>
-                        {{svg-jar "arrow-right-small"}} History
+                        {{svg-jar "arrow-right-small"}} Historique
                 </div>
                 <h2 class="gh-canvas-title" data-test-screen-title>
-                    History
+                    Historique
                 </h2>
             {{/if}}
         </div>

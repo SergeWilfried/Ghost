@@ -2,25 +2,25 @@
     <GhCanvasHeader class="gh-canvas-header">
         {{!-- Remove breadcrumbs for Authors and Contributors --}}
         {{#if this.currentUser.isAuthorOrContributor}}
-            <h2 class="gh-canvas-title" data-test-screen-title>Your profile</h2>
+            <h2 class="gh-canvas-title" data-test-screen-title>Votre profile</h2>
         {{else}}
             <div class="flex flex-column">
                 <div class="gh-canvas-breadcrumb" data-test-breadcrumb>
                     {{#unless this.session.user.isEditor}}
                         <LinkTo @route="settings">
-                            Settings
+                            Réglages
                         </LinkTo>
                         {{svg-jar "arrow-right-small"}}
                     {{/unless}}
                     <LinkTo @route="settings.staff" data-test-staff-link={{true}}>
-                        Staff
+                        Personel
                     </LinkTo>
                     {{svg-jar "arrow-right-small"}} Profile
                 </div>
                 <h2 class="gh-canvas-title" data-test-screen-title>
                     {{this.user.name}}
                     {{#if this.user.isSuspended}}
-                        <span class="gh-badge suspended" data-test-suspended-badge>Suspended</span>
+                        <span class="gh-badge suspended" data-test-suspended-badge>Suspendue</span>
                     {{/if}}
                 </h2>
             </div>
@@ -32,7 +32,7 @@
                     <GhDropdownButton @dropdownName="user-actions-menu" @classNames="gh-btn gh-btn-white gh-btn-icon icon-only user-actions-cog" @title="User Actions" data-test-user-actions>
                         <span>
                             {{svg-jar "settings"}}
-                            <span class="hidden">User Settings</span>
+                            <span class="hidden">User Réglages</span>
                         </span>
                     </GhDropdownButton>
                     <GhDropdown @name="user-actions-menu" @tagName="ul" @classNames="user-actions-menu dropdown-menu dropdown-align-right">
@@ -439,7 +439,7 @@
                     <div class="pa5">
                         <fieldset class="user-details-form">
                             <GhFormGroup>
-                                <label for="personal-token">Staff access token</label>
+                                <label for="personal-token">Personel access token</label>
                                 <div class="relative flex items-center {{unless this.copyContentKeyTask.isRunning "hide-child-instant"}}">
                                     <input
                                         type="text"
@@ -466,7 +466,7 @@
                                     Give apps personal access without sharing your email/password.
                                 </p>
                                 {{#if this.personalTokenRegenerated}}
-                                    <p class="green">Staff access token was successfully regenerated </p>
+                                    <p class="green">Personel access token was successfully regenerated </p>
                                 {{/if}}
                             </GhFormGroup>
                         </fieldset>
