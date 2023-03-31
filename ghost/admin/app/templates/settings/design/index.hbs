@@ -1,6 +1,6 @@
 <section class="gh-canvas gh-design" {{on-key "cmd+s" this.saveFromKeyboard}}>
     <GhCanvasHeader class="gh-canvas-header">
-        <h2 class="gh-canvas-title">Site design</h2>
+        <h2 class="gh-canvas-title">Edition du site</h2>
         <section class="view-actions">
             <div class="gh-select gh-preview-page-selector">
                 <OneWaySelect
@@ -20,10 +20,10 @@
             </div>
 
             <GhTaskButton
-                @buttonText="Save"
+                @buttonText="Sauvegarder"
                 @task={{this.saveTask}}
-                @successText="Saved"
-                @runningText="Saving"
+                @successText="Sauvegarde réussie"
+                @runningText="Sauvegarde en cours"
                 @class="gh-btn gh-btn-primary gh-btn-icon"
                 data-test-button="save-settings"
             />
